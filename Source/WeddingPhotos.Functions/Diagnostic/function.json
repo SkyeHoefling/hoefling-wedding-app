@@ -1,6 +1,6 @@
 {
     "scriptFile": "../WeddingPhotos.Functions.dll",
-    "entryPoint": "WeddingPhotos.Functions.AnalyzeImage.Run",
+    "entryPoint": "WeddingPhotos.Functions.Diagnostic.Run",
     "bindings": [
       {
         "type": "httpTrigger",

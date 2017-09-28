@@ -5,12 +5,12 @@ using Microsoft.Azure.WebJobs.Host;
 
 namespace WeddingPhotos.Functions
 {
-    public class AnalyzeImage
+    public class Diagnostic
     {
         public static IActionResult Run(HttpRequest req, TraceWriter log)
         {
-            log.Info("Hello World log message");
-            return new OkObjectResult("Hello World");
+            log.Info("Diagnostic status check");
+            return new OkObjectResult("OK");
         }
     }    
 }
