@@ -1,6 +1,6 @@
 {
     "scriptFile": "../WeddingPhotos.Functions.dll",
-    "entryPoint": "WeddingPhotos.Functions.Itinerary.Run",
+    "entryPoint": "WeddingPhotos.Functions.ItinerarySeed.Run",
     "bindings": [
       {
         "type": "httpTrigger",
@@ -11,4 +11,4 @@
         "name": "req"
       }
     ]  
-  }
+}

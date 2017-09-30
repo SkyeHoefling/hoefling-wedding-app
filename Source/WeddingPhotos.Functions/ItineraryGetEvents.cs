@@ -5,7 +5,7 @@ using Microsoft.Azure.WebJobs.Host;
 
 namespace WeddingPhotos.Functions
 {
-    public class Itinerary
+    public class ItineraryGetEvents
     {
         public static IActionResult Run(HttpRequest req, TraceWriter log)
         {
@@ -23,7 +23,7 @@ namespace WeddingPhotos.Functions
                     Description = "some description"
                 }
             };
-            
+
             return new OkObjectResult(events);
         }
     }    
