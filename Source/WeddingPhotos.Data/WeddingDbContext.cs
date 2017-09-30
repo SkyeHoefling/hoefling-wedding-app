@@ -8,9 +8,18 @@ namespace WeddingPhotos.Data
     {
         public DbSet<Event> Events { get; set; }
 
+        private string _connectionString;
+
+        public WeddingDbContext(string path = null)
+        {
+            _connectionString = string.IsNullOrEmpty(path) ?
+                "Data Source=wedding.db" :
+                $"Data Source={path}";
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=wedding.db");
+            optionsBuilder.UseSqlite(_connectionString);
         }
     }
 }
