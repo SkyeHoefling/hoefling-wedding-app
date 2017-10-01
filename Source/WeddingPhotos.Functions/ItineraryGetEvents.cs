@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
+using System.Collections.Generic;
+using WeddingPhotos.Data.Entities;
+using WeddingPhotos.Data;
+using System.Linq;
 
 namespace WeddingPhotos.Functions
 {
@@ -9,20 +13,12 @@ namespace WeddingPhotos.Functions
     {
         public static IActionResult Run(HttpRequest req, TraceWriter log)
         {
-            log.Info("Diagnostic status check");
-            var events = new[]
+            log.Info("Loading events from database");
+            IEnumerable<Event> events = null;
+            using (var context = new WeddingDbContext())
             {
-                new {
-                    Day = 1,
-                    Title = "All Aboard",
-                    Description = "Ipsum lopar"
-                },
-                new {
-                    Day = 2,
-                    Title = "Ipsum Event",
-                    Description = "some description"
-                }
-            };
+                events = context.Events.ToArray();
+            }
 
             return new OkObjectResult(events);
         }
