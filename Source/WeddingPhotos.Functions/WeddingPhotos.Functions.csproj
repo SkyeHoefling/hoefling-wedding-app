@@ -27,4 +27,7 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeddingPhotos.Data\WeddingPhotos.Data.csproj" />
+  </ItemGroup>
 </Project>
