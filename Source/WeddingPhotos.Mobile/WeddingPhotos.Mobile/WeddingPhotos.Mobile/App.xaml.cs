@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using WeddingPhotos.Mobile.Views;
 
 namespace WeddingPhotos.Mobile
 {
