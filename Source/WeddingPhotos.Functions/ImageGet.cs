@@ -6,11 +6,10 @@ using System.Collections.Generic;
 using WeddingPhotos.Data.Entities;
 using WeddingPhotos.Data;
 using System.Linq;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Auth;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Net.Http.Headers;
+using WeddingPhotos.Services;
 
 namespace WeddingPhotos.Functions
 {
@@ -25,14 +24,9 @@ namespace WeddingPhotos.Functions
                 return new BadRequestResult();
             }
 
-            var credentials = new StorageCredentials("hoeflingwedding", "HAItH1JIV7jWPLgHVq7cpcYPmZ7OXqb298HKpkxpNCcxYFIx9mCxV7VJJ4opd/+H8rsJIoc5hbH+kw+jSClPaA==");
-            var storageAccount = new CloudStorageAccount(credentials, true);
+            IImageHandler imageHandler = new AzureImageHandler();
+            var stream = await imageHandler.GetImageAsync(name);
 
-            var blobClient = storageAccount.CreateCloudBlobClient();
-            var container = blobClient.GetContainerReference("photos");
-            var block = container.GetBlockBlobReference($"{name}.jpg");
-
-            Stream stream = await block.OpenReadAsync();
             var response = new OkObjectResult(stream);
             response.ContentTypes.Add(new MediaTypeHeaderValue("image/jpeg"));
             return response;

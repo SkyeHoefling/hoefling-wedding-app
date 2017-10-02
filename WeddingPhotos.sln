@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Functions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Data", "Source\WeddingPhotos.Data\WeddingPhotos.Data.csproj", "{9519530C-9E81-426F-91EC-51E60C10B0DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Services", "Source\WeddingPhotos.Services\WeddingPhotos.Services.csproj", "{42C25A43-2F70-4F10-A1EC-682689038676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +48,22 @@ Global
 		{9519530C-9E81-426F-91EC-51E60C10B0DC}.Release|x64.Build.0 = Release|x64
 		{9519530C-9E81-426F-91EC-51E60C10B0DC}.Release|x86.ActiveCfg = Release|x86
 		{9519530C-9E81-426F-91EC-51E60C10B0DC}.Release|x86.Build.0 = Release|x86
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|x64.ActiveCfg = Debug|x64
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|x64.Build.0 = Debug|x64
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|x86.ActiveCfg = Debug|x86
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Debug|x86.Build.0 = Debug|x86
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|x64.ActiveCfg = Release|x64
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|x64.Build.0 = Release|x64
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|x86.ActiveCfg = Release|x86
+		{42C25A43-2F70-4F10-A1EC-682689038676}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D1373868-83A9-4FFB-8783-9D08F9147AF8} = {026A73A2-FC4D-42D7-BA3F-1E562D112AB1}
 		{9519530C-9E81-426F-91EC-51E60C10B0DC} = {026A73A2-FC4D-42D7-BA3F-1E562D112AB1}
+		{42C25A43-2F70-4F10-A1EC-682689038676} = {026A73A2-FC4D-42D7-BA3F-1E562D112AB1}
 	EndGlobalSection
 EndGlobal

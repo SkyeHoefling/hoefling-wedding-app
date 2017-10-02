@@ -32,5 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeddingPhotos.Data\WeddingPhotos.Data.csproj" />
+    <ProjectReference Include="..\WeddingPhotos.Services\WeddingPhotos.Services.csproj" />
   </ItemGroup>
 </Project>
