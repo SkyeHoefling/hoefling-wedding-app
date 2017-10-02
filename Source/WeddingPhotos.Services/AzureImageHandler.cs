@@ -5,6 +5,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Linq;
+
 namespace WeddingPhotos.Services
 {
     public class AzureImageHandler : IImageHandler
