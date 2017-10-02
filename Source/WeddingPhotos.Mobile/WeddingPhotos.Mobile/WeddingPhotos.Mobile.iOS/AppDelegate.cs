@@ -24,7 +24,7 @@ namespace WeddingPhotos.Mobile.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 			LoadApplication (new WeddingPhotos.Mobile.App ());
-
+            
 			return base.FinishedLaunching (app, options);
 		}
 	}
