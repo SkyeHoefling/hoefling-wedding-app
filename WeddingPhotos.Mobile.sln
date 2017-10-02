@@ -2,14 +2,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26923.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WeddingPhotos.Mobile", "Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.shproj", "{AE6655A9-465D-425E-A832-0B2388E3775A}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WeddingPhotos.Mobile", "Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.shproj", "{AE6655A9-465D-425E-A832-0B2388E3775A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.iOS", "Source\WeddingPhotos.Mobile.iOS\WeddingPhotos.Mobile.iOS.csproj", "{32F562A3-9B8E-43D0-B74B-B5C190003430}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.iOS", "Source\MobileApp\WeddingPhotos.Mobile.iOS\WeddingPhotos.Mobile.iOS.csproj", "{32F562A3-9B8E-43D0-B74B-B5C190003430}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{32f562a3-9b8e-43d0-b74b-b5c190003430}*SharedItemsImports = 4
-		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{ae6655a9-465d-425e-a832-0b2388e3775a}*SharedItemsImports = 13
+		Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{32f562a3-9b8e-43d0-b74b-b5c190003430}*SharedItemsImports = 4
+		Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{ae6655a9-465d-425e-a832-0b2388e3775a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
