@@ -1,16 +1,19 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 using Foundation;
+using UIKit;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
-using UIKit;
 
 namespace WeddingPhotos.Mobile.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the 
-    // User Interface of the application, as well as listening (and optionally responding) to 
-    // application events from iOS.
-    [Register("AppDelegate")]
+	// The UIApplicationDelegate for the application. This class is responsible for launching the 
+	// User Interface of the application, as well as listening (and optionally responding) to 
+	// application events from iOS.
+	[Register("AppDelegate")]
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
 		//
@@ -23,11 +26,11 @@ namespace WeddingPhotos.Mobile.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
-			LoadApplication(new App());
+            LoadApplication(new App());
             MobileCenter.Start("afd6d39c-a94a-4453-8c9e-a46f0540e7dc",
                 typeof(Analytics), typeof(Crashes));
-            
-			return base.FinishedLaunching(app, options);
+
+            return base.FinishedLaunching(app, options);
 		}
 	}
 }
