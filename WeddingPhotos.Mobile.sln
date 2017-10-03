@@ -2,17 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26923.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WeddingPhotos.Mobile", "Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.shproj", "{AE6655A9-465D-425E-A832-0B2388E3775A}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WeddingPhotos.Mobile", "Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.shproj", "{AE6655A9-465D-425E-A832-0B2388E3775A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.iOS", "Source\MobileApp\WeddingPhotos.Mobile.iOS\WeddingPhotos.Mobile.iOS.csproj", "{F43D8633-9C5F-45BF-A857-841C6E752D57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.iOS", "Source\WeddingPhotos.Mobile.iOS\WeddingPhotos.Mobile.iOS.csproj", "{F43D8633-9C5F-45BF-A857-841C6E752D57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.Android", "Source\MobileApp\WeddingPhotos.Mobile.Android\WeddingPhotos.Mobile.Android.csproj", "{9D63EA14-94C8-4AA9-AB8F-03832D692370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.Android", "Source\WeddingPhotos.Mobile.Android\WeddingPhotos.Mobile.Android.csproj", "{9D63EA14-94C8-4AA9-AB8F-03832D692370}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{9d63ea14-94c8-4aa9-ab8f-03832d692370}*SharedItemsImports = 4
-		Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{ae6655a9-465d-425e-a832-0b2388e3775a}*SharedItemsImports = 13
-		Source\MobileApp\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{f43d8633-9c5f-45bf-a857-841c6e752d57}*SharedItemsImports = 4
+		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{ae6655a9-465d-425e-a832-0b2388e3775a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
