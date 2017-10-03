@@ -17,7 +17,7 @@ namespace WeddingPhotos.Mobile.Views
 		public MainPage()
 		{
 			InitializeComponent();
-            BindingContext = new MainPageModel();
+            BindingContext = new MainViewModel();
 		}
 	}
 }

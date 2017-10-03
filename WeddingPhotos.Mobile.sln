@@ -10,7 +10,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeddingPhotos.Mobile.Androi
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{9d63ea14-94c8-4aa9-ab8f-03832d692370}*SharedItemsImports = 4
 		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{ae6655a9-465d-425e-a832-0b2388e3775a}*SharedItemsImports = 13
+		Source\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems*{f43d8633-9c5f-45bf-a857-841c6e752d57}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

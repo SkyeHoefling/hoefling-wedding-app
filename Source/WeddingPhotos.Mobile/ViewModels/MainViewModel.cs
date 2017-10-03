@@ -4,12 +4,13 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Plugin.Media;
+using GalaSoft.MvvmLight.Views;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
-    public class MainPageModel
+    public class MainViewModel
     {
-        public MainPageModel()
+        public MainViewModel()
         {
             AddPhoto = new Command(TakePhoto);
             
