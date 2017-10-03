@@ -71,7 +71,6 @@
       <HintPath>..\..\..\packages\Microsoft.Azure.Mobile.Crashes.0.15.2\lib\MonoAndroid403\Microsoft.Azure.Mobile.Crashes.Android.Bindings.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
-    <Reference Include="mscorlib" />
     <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
