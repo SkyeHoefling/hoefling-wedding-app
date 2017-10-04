@@ -24,7 +24,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Images}"
+            <ListView ItemsSource="{Binding Images}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
