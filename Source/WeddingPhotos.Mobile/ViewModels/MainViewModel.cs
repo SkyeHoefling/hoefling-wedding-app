@@ -1,5 +1,6 @@
 ﻿using Plugin.Media;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using WeddingPhotos.Mobile.MVVM;
 using WeddingPhotos.Mobile.Services;
@@ -13,14 +14,14 @@ namespace WeddingPhotos.Mobile.ViewModels
         public MainViewModel(IImageService service)
         {
             _imageService = service;
-            Images = new ObservableCollection<ImageSource>();
+            Images = new ObservableCollection<Models.Image>();
             AddPhoto = new Command(TakePhoto);
 
             Initialize();
         }
 
         public ICommand AddPhoto { get; set; }
-        public ObservableCollection<ImageSource> Images { get; set; }
+        public ObservableCollection<Models.Image> Images { get; set; }
 
         public async void TakePhoto()
         {
@@ -44,7 +45,15 @@ namespace WeddingPhotos.Mobile.ViewModels
 
         private async void Initialize()
         {
-            Images = new ObservableCollection<ImageSource>(await _imageService.GetAllImagesAsync());
+            Images = new ObservableCollection<Models.Image>((await _imageService.GetAllImagesAsync())
+                .Select(x =>
+                {
+                    return new Models.Image
+                    {
+                        Source = x,
+                        Height = 300
+                    };
+                }));
             NotifyPropertyChanged(nameof(Images));
         }
     }

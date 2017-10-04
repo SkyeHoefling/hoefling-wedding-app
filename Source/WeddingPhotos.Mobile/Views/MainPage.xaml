@@ -8,12 +8,15 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Images}">
+            <ListView ItemsSource="{Binding Images}"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Image Source="{Binding .}" />
+                                <Image Source="{Binding Source}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="{Binding Height}"/>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
