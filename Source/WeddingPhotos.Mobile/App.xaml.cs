@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
+using WeddingPhotos.Mobile.MVVM;
 using WeddingPhotos.Mobile.Views;
 using Xamarin.Forms;
 
@@ -11,9 +12,17 @@ namespace WeddingPhotos.Mobile
 		public App ()
 		{
 			InitializeComponent();
-
 			MainPage = new NavigationPage(new MainPage());
 		}
+
+        private static ViewModelLocator _locator;
+        public static ViewModelLocator Locator
+        {
+            get
+            {
+                return _locator ?? (_locator = new ViewModelLocator());
+            }
+        }
 
 		protected override void OnStart ()
 		{

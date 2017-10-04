@@ -1,14 +1,14 @@
-﻿using Plugin.Media;
+﻿using GalaSoft.MvvmLight;
+using Plugin.Media;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using WeddingPhotos.Mobile.MVVM;
 using WeddingPhotos.Mobile.Services;
 using Xamarin.Forms;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
-    public class MainViewModel : ViewModel
+    public class MainViewModel : ViewModelBase
     {
         private readonly IImageService _imageService;
         public MainViewModel(IImageService service)
@@ -54,7 +54,7 @@ namespace WeddingPhotos.Mobile.ViewModels
                         Height = 300
                     };
                 }));
-            NotifyPropertyChanged(nameof(Images));
+            RaisePropertyChanged(nameof(Images));
         }
     }
 }

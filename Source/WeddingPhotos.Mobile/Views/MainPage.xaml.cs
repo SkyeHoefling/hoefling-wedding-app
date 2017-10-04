@@ -1,7 +1,4 @@
-﻿using WeddingPhotos.Mobile.Services;
-using WeddingPhotos.Mobile.ViewModels;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace WeddingPhotos.Mobile.Views
@@ -12,7 +9,7 @@ namespace WeddingPhotos.Mobile.Views
 		public MainPage()
 		{
 			InitializeComponent();
-            BindingContext = new MainViewModel(new ImageService());
+            BindingContext = App.Locator.Main;
 		}
 	}
 }
