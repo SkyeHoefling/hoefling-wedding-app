@@ -1,15 +1,14 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
+using WeddingPhotos.Mobile.Droid.Services;
+using WeddingPhotos.Mobile.Services;
 
 namespace WeddingPhotos.Mobile.Droid
 {
-	[Activity (Label = "WeddingPhotos.Mobile", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity (Label = "WeddingPhotos.Mobile", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)
@@ -20,8 +19,15 @@ namespace WeddingPhotos.Mobile.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-			LoadApplication (new WeddingPhotos.Mobile.App());
+            RegisterDependencies();
+			LoadApplication (new App());
 		}
-	}
+
+        private void RegisterDependencies()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<IImagePropertiesService, ImagePropertiesService>();
+        }
+    }
 }
 

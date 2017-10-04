@@ -8,8 +8,7 @@ namespace WeddingPhotos.Mobile.MVVM
     public class ViewModelLocator
     {
         public ViewModelLocator()
-        {
-            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+        {;
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<IImageService, ImageService>();
         }

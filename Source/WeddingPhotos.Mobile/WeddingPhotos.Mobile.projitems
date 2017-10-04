@@ -14,6 +14,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Image.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\ViewModelLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IImagePropertiesService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IImageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ImageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />

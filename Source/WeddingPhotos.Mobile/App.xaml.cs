@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Mobile;
+﻿using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
 using WeddingPhotos.Mobile.MVVM;
@@ -9,7 +10,7 @@ namespace WeddingPhotos.Mobile
 {
     public partial class App : Application
 	{
-		public App ()
+		public App()
 		{
 			InitializeComponent();
 			MainPage = new NavigationPage(new MainPage());
@@ -24,7 +25,7 @@ namespace WeddingPhotos.Mobile
             }
         }
 
-		protected override void OnStart ()
+		protected override void OnStart()
 		{
             // Handle when your app starts
             MobileCenter.Start("ios=afd6d39c-a94a-4453-8c9e-a46f0540e7dc;" +
@@ -32,12 +33,12 @@ namespace WeddingPhotos.Mobile
                                typeof(Analytics), typeof(Crashes));
         }
 
-		protected override void OnSleep ()
+		protected override void OnSleep()
 		{
 			// Handle when your app sleeps
 		}
 
-		protected override void OnResume ()
+		protected override void OnResume()
 		{
 			// Handle when your app resumes
 		}

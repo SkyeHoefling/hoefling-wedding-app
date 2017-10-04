@@ -2,6 +2,7 @@
 using Plugin.Media;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using WeddingPhotos.Mobile.Services;
 using Xamarin.Forms;
@@ -11,9 +12,13 @@ namespace WeddingPhotos.Mobile.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private readonly IImageService _imageService;
-        public MainViewModel(IImageService service)
+        private readonly IImagePropertiesService _imagePropertiesService;
+        public MainViewModel(
+            IImageService imageService,
+            IImagePropertiesService imagePropertiesService)
         {
-            _imageService = service;
+            _imageService = imageService;
+            _imagePropertiesService = imagePropertiesService;
             Images = new ObservableCollection<Models.Image>();
             AddPhoto = new Command(TakePhoto);
 
@@ -45,15 +50,13 @@ namespace WeddingPhotos.Mobile.ViewModels
 
         private async void Initialize()
         {
-            Images = new ObservableCollection<Models.Image>((await _imageService.GetAllImagesAsync())
-                .Select(x =>
+            var images = await Task.WhenAll((await _imageService.GetAllImagesAsync())
+                .Select(async x => new Models.Image
                 {
-                    return new Models.Image
-                    {
-                        Source = x,
-                        Height = 300
-                    };
+                    Source = x,
+                    Height = (await _imagePropertiesService.RetrieveWdithHeightUriAsync(null)).height
                 }));
+            Images = new ObservableCollection<Models.Image>(images);
             RaisePropertyChanged(nameof(Images));
         }
     }
