@@ -2,8 +2,6 @@
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using UIKit;
-using WeddingPhotos.Mobile.iOS.Services;
-using WeddingPhotos.Mobile.Services;
 
 namespace WeddingPhotos.Mobile.iOS
 {
@@ -32,7 +30,6 @@ namespace WeddingPhotos.Mobile.iOS
         private void RegisterDependencies()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<IImagePropertiesService, ImagePropertiesService>();
         }
     }
 }
