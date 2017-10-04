@@ -41,10 +41,15 @@ namespace WeddingPhotos.Mobile.ViewModels
             var photo = await CrossMedia.Current.TakePhotoAsync(options);
 
             if (photo != null)
-                ImageSource.FromStream(() => {
-                    var stream = photo.GetStream();
-                    photo.Dispose();
-                    return stream;
+                Images.Insert(0, new Models.Image
+                {
+                    Source = ImageSource.FromStream(() =>
+                    {
+                        var stream = photo.GetStream();
+                        photo.Dispose();
+                        return stream;
+                    }),
+                    Height = 500
                 });
         }
 
@@ -54,7 +59,7 @@ namespace WeddingPhotos.Mobile.ViewModels
                 .Select(async x => new Models.Image
                 {
                     Source = x,
-                    Height = (await _imagePropertiesService.RetrieveWdithHeightUriAsync(null)).height
+                    Height = (await _imagePropertiesService.RetrieveWdithHeightUriAsync((x as UriImageSource).Uri)).height
                 }));
             Images = new ObservableCollection<Models.Image>(images);
             RaisePropertyChanged(nameof(Images));
