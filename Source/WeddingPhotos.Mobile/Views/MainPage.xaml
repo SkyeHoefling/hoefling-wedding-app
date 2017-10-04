@@ -4,24 +4,32 @@
              xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="WeddingPhotos.Mobile.Views.MainPage"
              Title="Guss~Hoefling Wedding">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ff:CachedImage">
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="DownsampleToViewSize" Value="True" />
+                <Setter Property="RetryCount" Value="5" />
+                <Setter Property="RetryDelay" Value="100" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style TargetType="ListView">
+                <Setter Property="HasUnevenRows" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Add Photo" Command="{Binding AddPhoto}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Images}"
-                      HasUnevenRows="True">
+            <ListView ItemsSource="{Binding Images}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <ff:CachedImage Source="{Binding Source}" 
-                                                Aspect="AspectFill"
-                                                DownsampleToViewSize="True"
-                                                RetryCount="5"
-                                                RetryDelay="100"
-                                                HorizontalOptions="FillAndExpand"
-                                                VerticalOptions="FillAndExpand"/>
+                                <ff:CachedImage Source="{Binding .}" />
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
