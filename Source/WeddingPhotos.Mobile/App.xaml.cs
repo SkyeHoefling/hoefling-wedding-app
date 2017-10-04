@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
-using WeddingPhotos.Mobile.Views;
-using Microsoft.Azure.Mobile;
+﻿using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
+using WeddingPhotos.Mobile.Views;
+using Xamarin.Forms;
 
 namespace WeddingPhotos.Mobile
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
 		public App ()
 		{

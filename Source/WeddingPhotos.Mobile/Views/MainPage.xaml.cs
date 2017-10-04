@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using WeddingPhotos.Mobile.Services;
 using WeddingPhotos.Mobile.ViewModels;
 
 using Xamarin.Forms;
@@ -17,7 +12,7 @@ namespace WeddingPhotos.Mobile.Views
 		public MainPage()
 		{
 			InitializeComponent();
-            BindingContext = new MainViewModel();
+            BindingContext = new MainViewModel(new ImageService());
 		}
 	}
 }

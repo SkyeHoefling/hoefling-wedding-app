@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Plugin.Media;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
+using WeddingPhotos.Mobile.MVVM;
+using WeddingPhotos.Mobile.Services;
 using Xamarin.Forms;
-using Plugin.Media;
-using GalaSoft.MvvmLight.Views;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel : ViewModel
     {
-        public MainViewModel()
+        private readonly IImageService _imageService;
+        public MainViewModel(IImageService service)
         {
+            _imageService = service;
+            Images = new ObservableCollection<ImageSource>();
             AddPhoto = new Command(TakePhoto);
-            
+
+            Initialize();
         }
 
         public ICommand AddPhoto { get; set; }
-        public ImageSource Source { get; set; }
+        public ObservableCollection<ImageSource> Images { get; set; }
 
         public async void TakePhoto()
         {
@@ -37,6 +40,12 @@ namespace WeddingPhotos.Mobile.ViewModels
                     photo.Dispose();
                     return stream;
                 });
+        }
+
+        private async void Initialize()
+        {
+            Images = new ObservableCollection<ImageSource>(await _imageService.GetAllImagesAsync());
+            NotifyPropertyChanged(nameof(Images));
         }
     }
 }
