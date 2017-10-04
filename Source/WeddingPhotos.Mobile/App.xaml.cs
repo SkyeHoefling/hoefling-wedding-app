@@ -29,7 +29,7 @@ namespace WeddingPhotos.Mobile
 		{
             // Handle when your app starts
             MobileCenter.Start("ios=afd6d39c-a94a-4453-8c9e-a46f0540e7dc;" +
-                               "android=667f6702-2840-4719-8ac5-16ab4e2307de;",
+                               "android=667f6702-2841-4719-8ac5-16ab4e2307de;",
                                typeof(Analytics), typeof(Crashes));
         }
 
