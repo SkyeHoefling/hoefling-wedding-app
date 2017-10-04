@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿
+using Foundation;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using UIKit;
@@ -19,7 +20,9 @@ namespace WeddingPhotos.Mobile.iOS
 		// You have 17 seconds to return from this method, or iOS will terminate your application.
 		//
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-		{
+        {
+            FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
+            
 			global::Xamarin.Forms.Forms.Init();
             RegisterDependencies();
             LoadApplication(new App());
