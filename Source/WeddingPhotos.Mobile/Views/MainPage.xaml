@@ -33,6 +33,7 @@
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">
                 <Button Text="Itinary" />
+                <Image Source="list.png" />
             </StackLayout>
             <StackLayout Grid.Row="1"
                          Grid.Column="0"
