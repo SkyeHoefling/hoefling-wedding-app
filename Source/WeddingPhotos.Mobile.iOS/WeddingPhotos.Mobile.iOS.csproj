@@ -224,6 +224,12 @@
     <ImageAsset Include="Resources\Media.xcassets\list.imageset\list.png">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\ship.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\ship.imageset\ship.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <Import Project="..\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems" Label="Shared" Condition="Exists('..\WeddingPhotos.Mobile\WeddingPhotos.Mobile.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

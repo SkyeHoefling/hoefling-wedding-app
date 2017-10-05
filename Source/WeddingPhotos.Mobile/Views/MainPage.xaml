@@ -60,7 +60,7 @@
                         <TapGestureRecognizer Command="{Binding Navigate}"
                                               CommandParameter="Ship" />
                     </StackLayout.GestureRecognizers>
-                    <Image Source="list.png" />
+                    <Image Source="ship.png" />
                     <Label Text="Ship"
                            HorizontalOptions="CenterAndExpand" />
                 </StackLayout>
