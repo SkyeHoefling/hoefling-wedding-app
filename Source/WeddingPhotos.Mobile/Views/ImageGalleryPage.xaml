@@ -23,7 +23,9 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Images}"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      BackgroundColor="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
