@@ -5,16 +5,18 @@
              Title="Ship Map">
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Text="test" 
-                       Placeholder="Search"
+            <SearchBar Placeholder="Search"
                        HeightRequest="50"/>
             <ListView ItemsSource="{Binding Decks}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Label Text="{Binding .}"
-                                       TextColor="Black" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding .}"
+                                           TextColor="Black" />
+                                    <Image Source="deck3.png" />
+                                </StackLayout>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
