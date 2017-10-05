@@ -20,9 +20,9 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding .}"
+                                    <Label Text="{Binding Name}"
                                            TextColor="Black" />
-                                    <Image Source="deck3.png" />
+                                    <Image Source="{Binding Source}" />
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

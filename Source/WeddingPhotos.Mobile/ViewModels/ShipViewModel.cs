@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using WeddingPhotos.Mobile.Models;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
@@ -12,31 +13,28 @@ namespace WeddingPhotos.Mobile.ViewModels
         public ShipViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-
-            var decks = new[]
-            {
-                "Deck 1",
-                "Deck 2",
-                "Deck 3",
-                "Deck 4",
-                "Deck 5",
-                "Deck 6",
-                "Deck 7",
-                "Deck 8",
-            };
-
-            Decks = new ObservableCollection<string>(decks);
-            RaisePropertyChanged(nameof(Decks));
-
+            
+            InitializeDecks();
             OpenDeck = new RelayCommand(OnOpenDeck);
         }
 
-        public ObservableCollection<string> Decks { get; set; }
+        public ObservableCollection<ShipDeck> Decks { get; set; }
         public ICommand OpenDeck { get; set; }
 
         private void OnOpenDeck()
         {
             _navigationService.NavigateTo(nameof(App.Locator.ShipDeck));
+        }
+
+        private void InitializeDecks()
+        {
+            var decks = new []
+            {
+                new ShipDeck("Deck 3", "deck3.png")
+            };
+
+            Decks = new ObservableCollection<ShipDeck>(decks);
+            RaisePropertyChanged(nameof(Decks));
         }
     }
 }

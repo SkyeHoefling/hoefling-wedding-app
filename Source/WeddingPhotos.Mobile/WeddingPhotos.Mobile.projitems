@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ShipDeck.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\NavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MVVM\ViewModelLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IImageService.cs" />
@@ -45,9 +46,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ImageGalleryPage.xaml">
