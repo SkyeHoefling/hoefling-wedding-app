@@ -1,5 +1,4 @@
-﻿
-using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
@@ -16,20 +15,7 @@ namespace WeddingPhotos.Mobile
 		public App()
 		{
             InitializeComponent();
-
-            SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<ImageGalleryViewModel>();
-            SimpleIoc.Default.Register<Services.IImageService, Services.ImageService>();
-
-            var nav = new MVVM.NavigationService();
-            nav.Configure(nameof(Locator.Main), typeof(MainPage));
-            nav.Configure(nameof(Locator.Gallery), typeof(ImageGalleryPage));
-            SimpleIoc.Default.Register<INavigationService>(() => nav);
-
-            var main = new  NavigationPage(new MainPage());
-            nav.Initialize(main);
-
-            MainPage = main;
+            RegisterDependencies();   
         }
 
         private static ViewModelLocator _locator;
@@ -58,5 +44,26 @@ namespace WeddingPhotos.Mobile
 		{
 			// Handle when your app resumes
 		}
-	}
+
+        private void RegisterDependencies()
+        {
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<ImageGalleryViewModel>();
+            SimpleIoc.Default.Register<Services.IImageService, Services.ImageService>();
+            RegisterNavigation();
+        }
+
+        private void RegisterNavigation()
+        {
+            var nav = new MVVM.NavigationService();
+            nav.Configure(nameof(Locator.Main), typeof(MainPage));
+            nav.Configure(nameof(Locator.Gallery), typeof(ImageGalleryPage));
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+
+            var main = new NavigationPage(new MainPage());
+            nav.Initialize(main);
+
+            MainPage = main;
+        }
+    }
 }
