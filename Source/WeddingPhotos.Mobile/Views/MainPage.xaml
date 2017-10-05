@@ -1,40 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="WeddingPhotos.Mobile.Views.MainPage"
              Title="Guss~Hoefling Wedding">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="ff:CachedImage">
-                <Setter Property="Aspect" Value="AspectFill" />
-                <Setter Property="DownsampleToViewSize" Value="True" />
-                <Setter Property="RetryCount" Value="5" />
-                <Setter Property="RetryDelay" Value="100" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            </Style>
-            <Style TargetType="ListView">
-                <Setter Property="HasUnevenRows" Value="True" />
-            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Add Photo" Command="{Binding AddPhoto}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView ItemsSource="{Binding Images}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <ff:CachedImage Source="{Binding .}" />
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="Gallery"
+                        Command="{Binding Navigate}"
+                        CommandParameter="Gallery"/>
+            </StackLayout>
+            <StackLayout Grid.Row="0"
+                         Grid.Column="1"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="Itinary" />
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                         Grid.Column="0"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="Ship" />
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                         Grid.Column="1"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="About" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

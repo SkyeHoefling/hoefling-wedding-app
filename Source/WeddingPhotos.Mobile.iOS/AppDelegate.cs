@@ -1,8 +1,12 @@
 ﻿
+using System;
+using FFImageLoading.Helpers;
 using Foundation;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using UIKit;
+using FFImageLoading.Forms.Touch;
+using FFImageLoading;
 
 namespace WeddingPhotos.Mobile.iOS
 {
@@ -21,9 +25,21 @@ namespace WeddingPhotos.Mobile.iOS
 		//
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
-            
 			global::Xamarin.Forms.Forms.Init();
+            CachedImageRenderer.Init();
+            var dummy = new CachedImageRenderer();
+
+            var config = new FFImageLoading.Config.Configuration()
+            {
+                VerboseLogging = true,
+                VerbosePerformanceLogging = true,
+                VerboseMemoryCacheLogging = true,
+                VerboseLoadingCancelledLogging = true,
+                Logger = new ImageLogger(),
+                
+            };
+            ImageService.Instance.Initialize(config);
+
             RegisterDependencies();
             LoadApplication(new App());
 
@@ -33,6 +49,24 @@ namespace WeddingPhotos.Mobile.iOS
         private void RegisterDependencies()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+        }
+
+        public class ImageLogger : IMiniLogger
+        {
+            public void Debug(string message)
+            {
+                Console.WriteLine(message);
+            }
+
+            public void Error(string errorMessage)
+            {
+                Console.WriteLine(errorMessage);
+            }
+
+            public void Error(string errorMessage, Exception ex)
+            {
+                Error($"{errorMessage}{Environment.NewLine}{ex.ToString()}");
+            }
         }
     }
 }

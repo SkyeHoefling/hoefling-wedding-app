@@ -1,4 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Views;
 using Plugin.Media;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -9,42 +11,17 @@ namespace WeddingPhotos.Mobile.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly IImageService _imageService;
-        public MainViewModel(IImageService imageService)
+        private readonly INavigationService _navigationService;
+        public MainViewModel(INavigationService navigationService)
         {
-            _imageService = imageService;
-            Images = new ObservableCollection<ImageSource>();
-            AddPhoto = new Command(TakePhoto);
-
-            Initialize();
+            _navigationService = navigationService;
+            Navigate = new RelayCommand<string>(OnNavigate);
         }
+        public ICommand Navigate { get; set; }
 
-        public ICommand AddPhoto { get; set; }
-        public ObservableCollection<ImageSource> Images { get; set; }
-
-        public async void TakePhoto()
+        public void OnNavigate(string location)
         {
-            await CrossMedia.Current.Initialize();
-
-            if (!CrossMedia.Current.IsCameraAvailable)
-                return;
-
-            var options = new Plugin.Media.Abstractions.StoreCameraMediaOptions();
-            var photo = await CrossMedia.Current.TakePhotoAsync(options);
-
-            if (photo != null)
-                Images.Insert(0, ImageSource.FromStream(() =>
-                {
-                    var stream = photo.GetStream();
-                    photo.Dispose();
-                    return stream;
-                }));
-        }
-
-        private async void Initialize()
-        {
-            Images = new ObservableCollection<ImageSource>(await _imageService.GetAllImagesAsync());
-            RaisePropertyChanged(nameof(Images));
+            _navigationService.NavigateTo("Gallery");
         }
     }
 }
