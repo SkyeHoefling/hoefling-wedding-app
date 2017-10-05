@@ -12,7 +12,8 @@
                 <b:Interaction.Behaviors>
                     <b:BehaviorCollection>
                         <b:EventToCommand EventName="ItemTapped"
-                                          Command="{Binding OpenDeck}" />
+                                          Command="{Binding OpenDeck}"
+                                          PassEventArgument="True"/>
                     </b:BehaviorCollection>
                 </b:Interaction.Behaviors>
                 <ListView.ItemTemplate>
@@ -22,7 +23,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Name}"
                                            TextColor="Black" />
-                                    <Image Source="{Binding Source}" />
+                                    <Image Source="{Binding MenuSource}" />
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

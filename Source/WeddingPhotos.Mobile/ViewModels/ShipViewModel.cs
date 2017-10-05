@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WeddingPhotos.Mobile.Models;
+using Xamarin.Forms;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
@@ -15,22 +16,23 @@ namespace WeddingPhotos.Mobile.ViewModels
             _navigationService = navigationService;
             
             InitializeDecks();
-            OpenDeck = new RelayCommand(OnOpenDeck);
+            OpenDeck = new RelayCommand<ItemTappedEventArgs>(OnOpenDeck);
         }
 
         public ObservableCollection<ShipDeck> Decks { get; set; }
         public ICommand OpenDeck { get; set; }
 
-        private void OnOpenDeck()
+        private void OnOpenDeck(ItemTappedEventArgs itemSelected)
         {
-            _navigationService.NavigateTo(nameof(App.Locator.ShipDeck));
+            var item = (ShipDeck)itemSelected.Item;
+            _navigationService.NavigateTo(nameof(App.Locator.ShipDeck), item);
         }
 
         private void InitializeDecks()
         {
             var decks = new []
             {
-                new ShipDeck("Deck 3", "deck3.png")
+                new ShipDeck("Deck 3", "deck3.png", "deck3_map.png")
             };
 
             Decks = new ObservableCollection<ShipDeck>(decks);

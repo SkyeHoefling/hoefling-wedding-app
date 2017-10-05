@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using WeddingPhotos.Mobile.Models;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace WeddingPhotos.Mobile.Views
@@ -6,10 +7,12 @@ namespace WeddingPhotos.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ShipDeckPage : ContentPage
 	{
-		public ShipDeckPage ()
+		public ShipDeckPage(ShipDeck model)
 		{
 			InitializeComponent ();
-            BindingContext = App.Locator.ShipDeck;
+            var context = App.Locator.ShipDeck;
+            context.Initialize(model);
+            BindingContext = context;
 		}
 	}
 }
