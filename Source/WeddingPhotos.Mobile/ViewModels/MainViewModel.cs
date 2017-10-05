@@ -1,11 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
-using Plugin.Media;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
-using WeddingPhotos.Mobile.Services;
-using Xamarin.Forms;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
