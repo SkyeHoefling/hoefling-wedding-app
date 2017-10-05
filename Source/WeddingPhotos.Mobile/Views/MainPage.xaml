@@ -24,28 +24,61 @@
                          Grid.Column="0"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">
-                <Button Text="Gallery"
-                        Command="{Binding Navigate}"
-                        CommandParameter="Gallery"/>
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Navigate}"
+                                              CommandParameter="Gallery" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="list.png" />
+                    <Label Text="Gallery"
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="0"
                          Grid.Column="1"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">
-                <Button Text="Itinary" />
-                <Image Source="list.png" />
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Navigate}"
+                                              CommandParameter="Itinary" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="list.png" />
+                    <Label Text="Itinary"
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="1"
                          Grid.Column="0"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">
-                <Button Text="Ship" />
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Navigate}"
+                                              CommandParameter="Ship" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="list.png" />
+                    <Label Text="Ship"
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="1"
                          Grid.Column="1"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">
-                <Button Text="About" />
+                <StackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Navigate}"
+                                              CommandParameter="About" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="list.png" />
+                    <Label Text="About"
+                           HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
