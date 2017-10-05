@@ -17,7 +17,7 @@ namespace WeddingPhotos.Mobile.ViewModels
 
         public void OnNavigate(string location)
         {
-            _navigationService.NavigateTo("Gallery");
+            _navigationService.NavigateTo(location);
         }
     }
 }

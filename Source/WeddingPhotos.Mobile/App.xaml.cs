@@ -49,6 +49,7 @@ namespace WeddingPhotos.Mobile
         {
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ImageGalleryViewModel>();
+            SimpleIoc.Default.Register<ShipViewModel>();
             SimpleIoc.Default.Register<Services.IImageService, Services.ImageService>();
             RegisterNavigation();
         }
@@ -58,6 +59,7 @@ namespace WeddingPhotos.Mobile
             var nav = new MVVM.NavigationService();
             nav.Configure(nameof(Locator.Main), typeof(MainPage));
             nav.Configure(nameof(Locator.Gallery), typeof(ImageGalleryPage));
+            nav.Configure(nameof(Locator.Ship), typeof(ShipPage));
             SimpleIoc.Default.Register<INavigationService>(() => nav);
 
             var main = new NavigationPage(new MainPage());

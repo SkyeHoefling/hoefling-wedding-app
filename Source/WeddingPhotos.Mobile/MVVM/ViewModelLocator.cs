@@ -20,5 +20,13 @@ namespace WeddingPhotos.Mobile.MVVM
                 return ServiceLocator.Current.GetInstance<ImageGalleryViewModel>();
             }
         }
+
+        public ShipViewModel Ship
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ShipViewModel>();
+            }
+        }
     }
 }
