@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="WeddingPhotos.Mobile.Views.ShipDeckPage"
+             Title="Deck 3">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="deck3_map.png" />
+                <StackLayout Orientation="Vertical">
+                    <Label Text="data will go here" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

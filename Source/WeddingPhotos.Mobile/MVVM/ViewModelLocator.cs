@@ -28,5 +28,13 @@ namespace WeddingPhotos.Mobile.MVVM
                 return ServiceLocator.Current.GetInstance<ShipViewModel>();
             }
         }
+
+        public ShipDeckViewModel ShipDeck
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ShipDeckViewModel>();
+            }
+        }
     }
 }

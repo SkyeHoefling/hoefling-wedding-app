@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ImageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ImageGalleryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ShipDeckViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ShipViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ImageGalleryPage.xaml.cs">
       <DependentUpon>ImageGalleryPage.xaml</DependentUpon>
@@ -25,6 +26,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ShipDeckPage.xaml.cs">
+      <DependentUpon>ShipDeckPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ShipPage.xaml.cs">
       <DependentUpon>ShipPage.xaml</DependentUpon>
@@ -52,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ShipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ShipDeckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

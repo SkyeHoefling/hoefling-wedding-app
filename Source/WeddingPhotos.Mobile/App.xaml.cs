@@ -50,6 +50,7 @@ namespace WeddingPhotos.Mobile
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ImageGalleryViewModel>();
             SimpleIoc.Default.Register<ShipViewModel>();
+            SimpleIoc.Default.Register<ShipDeckViewModel>();
             SimpleIoc.Default.Register<Services.IImageService, Services.ImageService>();
             RegisterNavigation();
         }
@@ -60,6 +61,7 @@ namespace WeddingPhotos.Mobile
             nav.Configure(nameof(Locator.Main), typeof(MainPage));
             nav.Configure(nameof(Locator.Gallery), typeof(ImageGalleryPage));
             nav.Configure(nameof(Locator.Ship), typeof(ShipPage));
+            nav.Configure(nameof(Locator.ShipDeck), typeof(ShipDeckPage));
             SimpleIoc.Default.Register<INavigationService>(() => nav);
 
             var main = new NavigationPage(new MainPage());

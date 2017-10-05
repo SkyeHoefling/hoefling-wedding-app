@@ -40,6 +40,8 @@ namespace WeddingPhotos.Mobile.iOS
             };
             ImageService.Instance.Initialize(config);
 
+            Corcav.Behaviors.Infrastructure.Init();
+
             RegisterDependencies();
 
             global::Xamarin.Forms.Forms.Init();
