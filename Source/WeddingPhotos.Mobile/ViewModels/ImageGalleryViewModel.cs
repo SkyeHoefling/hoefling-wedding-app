@@ -33,12 +33,15 @@ namespace WeddingPhotos.Mobile.ViewModels
             var photo = await CrossMedia.Current.TakePhotoAsync(options);
 
             if (photo != null)
+            {
                 Images.Insert(0, ImageSource.FromStream(() =>
                 {
                     var stream = photo.GetStream();
                     photo.Dispose();
                     return stream;
                 }));
+                RaisePropertyChanged(nameof(Images));
+            }
         }
 
         private async void Initialize()

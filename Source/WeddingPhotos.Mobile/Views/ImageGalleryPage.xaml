@@ -21,8 +21,13 @@
         <ToolbarItem Name="Add Photo" Command="{Binding AddPhoto}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView ItemsSource="{Binding Images}"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0"
+                      ItemsSource="{Binding Images}"
                       HasUnevenRows="True"
                       SeparatorVisibility="None"
                       BackgroundColor="Transparent">
@@ -30,13 +35,16 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <ff:CachedImage Source="{Binding .}"
-                                                LoadingPriority="High"/>
+                                <ff:CachedImage Source="{Binding .}" 
+                                                LoadingPlaceholder="list.png"
+                                                HeightRequest="500"/>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+            <Label Grid.Row="1"
+                   Text="bottom" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -25,7 +25,7 @@ namespace WeddingPhotos.Mobile.iOS
 		//
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-			global::Xamarin.Forms.Forms.Init();
+			
             CachedImageRenderer.Init();
             var dummy = new CachedImageRenderer();
 
@@ -41,6 +41,8 @@ namespace WeddingPhotos.Mobile.iOS
             ImageService.Instance.Initialize(config);
 
             RegisterDependencies();
+
+            global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
