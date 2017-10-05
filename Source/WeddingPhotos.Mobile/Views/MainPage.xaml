@@ -30,7 +30,7 @@
                         <TapGestureRecognizer Command="{Binding Navigate}"
                                               CommandParameter="Gallery" />
                     </StackLayout.GestureRecognizers>
-                    <Image Source="list.png" />
+                    <Image Source="camera.png" />
                     <Label Text="Gallery"
                            HorizontalOptions="CenterAndExpand" />
                 </StackLayout>
