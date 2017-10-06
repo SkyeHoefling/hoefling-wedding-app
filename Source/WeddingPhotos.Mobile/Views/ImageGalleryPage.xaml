@@ -36,7 +36,7 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <ff:CachedImage Source="{Binding .}" 
-                                                LoadingPlaceholder="list.png"
+                                                LoadingPlaceholder="loading.png"
                                                 HeightRequest="500"/>
                             </ViewCell.View>
                         </ViewCell>
