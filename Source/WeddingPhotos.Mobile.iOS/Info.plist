@@ -52,7 +52,7 @@
 		<string>Icon-Small@3x.png</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen.storyboard</string>
+	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>WeddingPhotos.Mobile</string>
 	<key>CFBundleShortVersionString</key>
