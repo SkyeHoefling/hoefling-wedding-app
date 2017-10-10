@@ -22,10 +22,11 @@ namespace WeddingPhotos.Mobile.ViewModels
 
         public void OnNavigate(string location)
         {
-            if (location == nameof(App.Locator.Gallery) || location == nameof(App.Locator.Ship))
-                _navigationService.NavigateTo(location);
-            else
+            if (location == nameof(App.Locator.Gallery))
                 _dialogService.ShowMessage("This feature is not implemented yet", "Not Implemented");
+            else
+                _navigationService.NavigateTo(location);
+            
         }
     }
 }
