@@ -65,7 +65,7 @@ namespace WeddingPhotos.Mobile
             nav.Configure(nameof(Locator.ShipDeck), typeof(ShipDeckPage));
             SimpleIoc.Default.Register<INavigationService>(() => nav);
 
-            var main = new NavigationPage(new MainPage());
+            var main = new NavigationPage(new HomePage());
             nav.Initialize(main);
 
             MainPage = main;
