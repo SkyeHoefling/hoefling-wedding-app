@@ -1,8 +1,10 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using System.Reflection;
 
 namespace WeddingPhotos.Mobile.Droid
 {
@@ -20,9 +22,16 @@ namespace WeddingPhotos.Mobile.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+            InitializePackages();
             RegisterDependencies();
 			LoadApplication (new App());
 		}
+
+        private void InitializePackages()
+        {
+            var carouselView = typeof(Xamarin.Forms.CarouselView);
+            var assembly = Assembly.Load(carouselView.FullName);
+        }
 
         private void RegisterDependencies()
         {
