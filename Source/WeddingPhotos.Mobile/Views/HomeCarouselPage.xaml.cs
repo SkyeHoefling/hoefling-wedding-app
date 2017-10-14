@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace WeddingPhotos.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CarouselPage : CarouselPage
+	public partial class HomeCarouselPage : CarouselPage
     {
-		public HomePage ()
+		public HomeCarouselPage()
 		{
 			InitializeComponent ();
 		}
