@@ -52,7 +52,7 @@ namespace WeddingPhotos.Mobile
             SimpleIoc.Default.Register<ShipViewModel>();
             SimpleIoc.Default.Register<ShipDeckViewModel>();
             SimpleIoc.Default.Register<Services.IImageService, Services.ImageService>();
-            SimpleIoc.Default.Register<IDialogService, DialogService>();
+            SimpleIoc.Default.Register<IDialogService>(() => new DialogService());
             RegisterNavigation();
         }
 

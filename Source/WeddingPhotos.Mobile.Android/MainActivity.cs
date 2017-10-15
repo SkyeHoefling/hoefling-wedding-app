@@ -5,6 +5,8 @@ using Android.OS;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using System.Reflection;
+using FFImageLoading.Forms.Droid;
+using FFImageLoading.Helpers;
 
 namespace WeddingPhotos.Mobile.Droid
 {
@@ -22,6 +24,21 @@ namespace WeddingPhotos.Mobile.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+            Corcav.Behaviors.Infrastructure.Init();
+            CachedImageRenderer.Init();
+            var dummy = new CachedImageRenderer();
+
+            var config = new FFImageLoading.Config.Configuration()
+            {
+                VerboseLogging = true,
+                VerbosePerformanceLogging = true,
+                VerboseMemoryCacheLogging = true,
+                VerboseLoadingCancelledLogging = true,
+                Logger = new ImageLogger(),
+
+            };
+            var carouselView = typeof(Xamarin.Forms.CarouselView);
+            var assembly = Assembly.Load(carouselView.FullName);
             InitializePackages();
             RegisterDependencies();
 			LoadApplication (new App());
@@ -36,6 +53,24 @@ namespace WeddingPhotos.Mobile.Droid
         private void RegisterDependencies()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+        }
+
+        public class ImageLogger : IMiniLogger
+        {
+            public void Debug(string message)
+            {
+                Console.WriteLine(message);
+            }
+
+            public void Error(string errorMessage)
+            {
+                Console.WriteLine(errorMessage);
+            }
+
+            public void Error(string errorMessage, Exception ex)
+            {
+                Error($"{errorMessage}{System.Environment.NewLine}{ex.ToString()}");
+            }
         }
     }
 }
