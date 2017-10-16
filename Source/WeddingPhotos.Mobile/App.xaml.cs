@@ -47,6 +47,7 @@ namespace WeddingPhotos.Mobile
 
         private void RegisterDependencies()
         {
+            SimpleIoc.Default.Register<HomeViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<ImageGalleryViewModel>();
             SimpleIoc.Default.Register<ShipViewModel>();

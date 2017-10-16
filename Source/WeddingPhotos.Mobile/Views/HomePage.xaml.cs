@@ -9,15 +9,7 @@ namespace WeddingPhotos.Mobile.Views
 		public HomePage ()
 		{
 			InitializeComponent ();
-            BindingContext = new
-            {
-                Data = new[]
-                {
-                    "Test1",
-                    "Test2",
-                    "Test3"
-                }
-            };
+            BindingContext = App.Locator.Home;
 		}
 	}
 }

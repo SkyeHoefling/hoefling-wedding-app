@@ -5,6 +5,14 @@ namespace WeddingPhotos.Mobile.MVVM
 {
     public class ViewModelLocator
     {
+        public HomeViewModel Home
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<HomeViewModel>();
+            }
+        }
+
         public MainViewModel Main
         {
             get
