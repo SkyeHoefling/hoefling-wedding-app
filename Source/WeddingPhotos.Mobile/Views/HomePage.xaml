@@ -17,13 +17,28 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Column="0"
                        Grid.Row="0"
-                       Source="camera.png" />
+                       Source="camera.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SlideToTab}"
+                                              CommandParameter="0" />
+                    </Image.GestureRecognizers>
+                </Image>
                 <Image Grid.Column="1"
                        Grid.Row="0"
-                       Source="list.png" />
+                       Source="list.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SlideToTab}"
+                                              CommandParameter="1" />
+                    </Image.GestureRecognizers>
+                </Image>
                 <Image Grid.Column="2"
                        Grid.Row="0"
-                       Source="ship.png" />
+                       Source="ship.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SlideToTab}"
+                                              CommandParameter="2" />
+                    </Image.GestureRecognizers>
+                </Image>
                 <BoxView Grid.Column="{Binding TabPosition}"
                          Grid.Row="1"
                          HeightRequest="2"

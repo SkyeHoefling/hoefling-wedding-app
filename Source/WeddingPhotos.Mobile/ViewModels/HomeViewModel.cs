@@ -17,9 +17,11 @@ namespace WeddingPhotos.Mobile.ViewModels
             };
             TabPosition = 0;
             SlideTab = new RelayCommand<string>(OnSlideTab);
+            SlideToTab = new RelayCommand<string>(OnSlideToTab);
         }
 
         public ICommand SlideTab { get; set; }
+        public ICommand SlideToTab { get; set; }
 
         private bool _hasNext;
         public bool HasNext
@@ -61,6 +63,11 @@ namespace WeddingPhotos.Mobile.ViewModels
         {
             var tabModifier = int.Parse(direction);
             TabPosition += tabModifier;
+        }
+
+        private void OnSlideToTab(string position)
+        {
+            TabPosition = int.Parse(position);
         }
     }
 }
