@@ -11,7 +11,21 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2" />
+                </Grid.RowDefinitions>
+                <Image Grid.Column="0"
+                       Grid.Row="0"
+                       Source="camera.png" />
+                <Image Grid.Column="1"
+                       Grid.Row="0"
+                       Source="list.png" />
+                <Image Grid.Column="2"
+                       Grid.Row="0"
+                       Source="ship.png" />
                 <BoxView Grid.Column="{Binding TabPosition}"
+                         Grid.Row="1"
                          HeightRequest="2"
                          BackgroundColor="Black"
                          HorizontalOptions="FillAndExpand" />
