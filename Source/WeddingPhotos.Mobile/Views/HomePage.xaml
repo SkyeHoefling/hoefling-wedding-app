@@ -59,7 +59,7 @@
                     <cv:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <p:ShipView />
+                                <p:ShipView BindingContext="{Binding .}" />
                             </StackLayout>
                         </DataTemplate>
                     </cv:CarouselViewControl.ItemTemplate>

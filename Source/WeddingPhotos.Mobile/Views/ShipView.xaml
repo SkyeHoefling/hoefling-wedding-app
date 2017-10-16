@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
              x:Class="WeddingPhotos.Mobile.Views.ShipView">
   <ContentView.Content>
         <StackLayout>
             <SearchBar Placeholder="Search"
                        HeightRequest="50"/>
-            <!--<ListView ItemsSource="{Binding Decks}">
+            <ListView ItemsSource="{Binding Decks}">
                 <b:Interaction.Behaviors>
                     <b:BehaviorCollection>
                         <b:EventToCommand EventName="ItemTapped"
@@ -27,7 +28,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
         </StackLayout>
   </ContentView.Content>
 </ContentView>
