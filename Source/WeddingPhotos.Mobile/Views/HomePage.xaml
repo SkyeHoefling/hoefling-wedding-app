@@ -49,20 +49,9 @@
             <Grid VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <StackLayout Grid.Column="0"
-                             VerticalOptions="CenterAndExpand"
-                             IsVisible="{Binding HasPrevious}">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SlideTab}"
-                                              CommandParameter="-1" />
-                    </StackLayout.GestureRecognizers>
-                    <Image Source="arrow_left.png" />
-                </StackLayout>
-                <cv:CarouselViewControl Grid.Column="1" 
+                <cv:CarouselViewControl Grid.Column="0" 
                                         ItemsSource="{Binding Tabs}"
                                         Position="{Binding TabPosition}"
                                         VerticalOptions="FillAndExpand"
@@ -70,13 +59,22 @@
                     <cv:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <Label Text="this is a test" />
+                                <p:ShipView />
                             </StackLayout>
                         </DataTemplate>
                     </cv:CarouselViewControl.ItemTemplate>
                 </cv:CarouselViewControl>
-                <StackLayout Grid.Column="2"
-                             VerticalOptions="CenterAndExpand"
+                <StackLayout VerticalOptions="CenterAndExpand" 
+                             HorizontalOptions="StartAndExpand"
+                             IsVisible="{Binding HasPrevious}">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SlideTab}"
+                                              CommandParameter="-1" />
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="arrow_left.png" />
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand" 
+                             HorizontalOptions="EndAndExpand"
                              IsVisible="{Binding HasNext}">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SlideTab}"
