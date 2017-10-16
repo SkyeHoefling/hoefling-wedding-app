@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingPhotos.Mobile.Views.ShipView">
+  <ContentView.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search"
+                       HeightRequest="50"/>
+            <!--<ListView ItemsSource="{Binding Decks}">
+                <b:Interaction.Behaviors>
+                    <b:BehaviorCollection>
+                        <b:EventToCommand EventName="ItemTapped"
+                                          Command="{Binding OpenDeck}"
+                                          PassEventArgument="True"/>
+                    </b:BehaviorCollection>
+                </b:Interaction.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"
+                                           TextColor="Black" />
+                                    <Image Source="{Binding MenuSource}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

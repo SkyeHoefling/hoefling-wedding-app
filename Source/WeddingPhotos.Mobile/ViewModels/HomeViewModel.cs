@@ -2,6 +2,8 @@
 using GalaSoft.MvvmLight.Command;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using WeddingPhotos.Mobile.Views;
+using Xamarin.Forms;
 
 namespace WeddingPhotos.Mobile.ViewModels
 {
@@ -9,11 +11,11 @@ namespace WeddingPhotos.Mobile.ViewModels
     {
         public HomeViewModel()
         {
-            Tabs = new ObservableCollection<string>
+            Tabs = new ObservableCollection<ContentPage>
             {
-                "Test1",
-                "Test2",
-                "Test3"
+                new ShipPage(),
+                new ShipPage(),
+                new ShipPage()
             };
             TabPosition = 0;
             SlideTab = new RelayCommand<string>(OnSlideTab);
@@ -44,7 +46,7 @@ namespace WeddingPhotos.Mobile.ViewModels
                 RaisePropertyChanged(nameof(HasPrevious));
             }
         }
-        public ObservableCollection<string> Tabs { get; set; }
+        public ObservableCollection<ContentPage> Tabs { get; set; }
 
         private int _tabPosition;
         public int TabPosition

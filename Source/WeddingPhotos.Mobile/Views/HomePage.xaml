@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:p="clr-namespace:WeddingPhotos.Mobile.Views"
              x:Class="WeddingPhotos.Mobile.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
@@ -45,7 +46,7 @@
                          BackgroundColor="Black"
                          HorizontalOptions="FillAndExpand" />
             </Grid>
-            <Grid VerticalOptions="CenterAndExpand">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="8*"/>
@@ -61,16 +62,13 @@
                     <Image Source="arrow_left.png" />
                 </StackLayout>
                 <StackLayout Grid.Column="1"
-                             VerticalOptions="CenterAndExpand"
+                             VerticalOptions="StartAndExpand"
                              HorizontalOptions="FillAndExpand">
                     <cv:CarouselView ItemsSource="{Binding Tabs}"
                                      Position="{Binding TabPosition}">
                         <cv:CarouselView.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Label HorizontalOptions="CenterAndExpand"
-                                           Text="{Binding .}" />
-                                </Grid>
+                                <p:ShipView />
                             </DataTemplate>
                         </cv:CarouselView.ItemTemplate>
                     </cv:CarouselView>
