@@ -8,6 +8,7 @@ using UIKit;
 using FFImageLoading.Forms.Touch;
 using FFImageLoading;
 using System.Reflection;
+using CarouselView.FormsPlugin.iOS;
 
 namespace WeddingPhotos.Mobile.iOS
 {
@@ -41,13 +42,12 @@ namespace WeddingPhotos.Mobile.iOS
             };
             ImageService.Instance.Initialize(config);
 
-            Corcav.Behaviors.Infrastructure.Init();
-            var carouselView = typeof(Xamarin.Forms.CarouselView);
-            var aseembly = Assembly.Load(carouselView.FullName);
+            Corcav.Behaviors.Infrastructure.Init();            
 
             RegisterDependencies();
 
             global::Xamarin.Forms.Forms.Init();
+            CarouselViewRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

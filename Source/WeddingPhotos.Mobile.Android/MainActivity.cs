@@ -7,6 +7,7 @@ using Microsoft.Practices.ServiceLocation;
 using System.Reflection;
 using FFImageLoading.Forms.Droid;
 using FFImageLoading.Helpers;
+using CarouselView.FormsPlugin.Android;
 
 namespace WeddingPhotos.Mobile.Droid
 {
@@ -37,8 +38,6 @@ namespace WeddingPhotos.Mobile.Droid
                 Logger = new ImageLogger(),
 
             };
-            var carouselView = typeof(Xamarin.Forms.CarouselView);
-            var assembly = Assembly.Load(carouselView.FullName);
             InitializePackages();
             RegisterDependencies();
 			LoadApplication (new App());
@@ -46,8 +45,7 @@ namespace WeddingPhotos.Mobile.Droid
 
         private void InitializePackages()
         {
-            var carouselView = typeof(Xamarin.Forms.CarouselView);
-            var assembly = Assembly.Load(carouselView.FullName);
+            CarouselViewRenderer.Init();
         }
 
         private void RegisterDependencies()
